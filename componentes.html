@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CicloRibeira - Sua loja de bicicletas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .search-container {
+            flex: 1;
+            margin: 0 10px;
+            display: flex;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .search-container button {
+            background-color: orange;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .user-options {
+            font-size: 14px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+            line-height: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .search-container {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .user-options {
+                text-align: center;
+                gap: 0px;
+                line-height: 1;
+            }
+
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+        .anuncios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas */
+    gap: 10px;
+    padding: 10px;
+}
+
+.anuncios {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Sempre 2 colunas */
+    gap: 10px;
+    padding: 10px;
+}
+
+.anuncio {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%; /* Garante que ocupe a coluna corretamente */
+}
+
+/* Garante 2 colunas em telas menores */
+@media (max-width: 768px) {
+    .anuncios {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"> CicloRibeira📍</div> 
+        
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar CicloRibeira">
+            <button>🔍</button>
+        </div>
+        
+        <div class="user-options">
+            <p>Olá, faça seu login</p>
+            <p>Devoluções e Pedidos</p>
+            <p>🛒 Carrinho</p>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+    
+    <nav style="background-color: #2d2d2d; padding: 10px;justify-content: center">
+        <ul>
+            
+            <li><a href="index.html">Mais Vendidos</a></li>
+            <li><a href="bicicletas.html">Bicicletas</a></li>
+            <li><a href="acessorios.html">Acessórios</a></li>
+            <li><a href="componentes.html">Componentes</a></li>
+            <li><a href="shimano.html">Shimano</a></li>
+            <li><a href="novidades.html">Novidades na Loja</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('active');
+        }
+    </script>
+
+
+    <section style="text-align: center; padding: 20px;">
+
+        <h2
+            style="font-size: 36px; color: #333; font-weight: bold; border-bottom: 2px solid #0000; padding-bottom: 10px;">
+            Componentes
+        </h2>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px;">
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente1.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Chave de acionamento Pisca/farol/ buzina DK36 para V8/Q8</h3>
+                <p>R$ 117,00</p>
+                <a href="https://www.lojagtsm1.com.br/componentes/chave-de-acionamento-piscafarol-buzina-dk36-para-v8q8"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio2.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Garfo Suspensão 29 100mm GTS Sport Steel</h3>
+                <p>R$ 80,10</p>
+                <a href="https://www.lojagtsm1.com.br/componentes/garfos/garfo-suspensao-29-100mm-gts-sport-steel"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio3.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Refletor olho de gato para roda de Magnésio</h3>
+                <p> R$ 17,10</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/sinalizacao/refletor-olho-de-gato-para-roda-de-magnesio"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio4.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3> Garfo Suspensão aro 29 160 mm X Fusion TRACE RC Eixo Boost Tapared All Mountain Enduro</h3>
+                <p>R$ 6.000,00</p>
+                <a href="hhttps://www.lojagtsm1.com.br/componentes/garfo-suspensao-aro-29-160-mm-x-fusion-trace-rc-eixo-boost-tapared-all-mountain-enduro"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente5.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Garfo Suspensão aro 29 140 mm X Fusion Slide RC Eixo Boost Tapared All Mountain Enduro</h3>
+                <p>R$ 2.331,00</p>
+                <a href="Garfo Suspensão aro 29 160 mm X Fusion TRACE RC Eixo Boost Tapared All Mountain Enduro"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente6.jpg" alt="Bike Speed"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Garfo Suspensão aro 29 100mm X Fusion RC32 Trava no Guidão Eixo Boost Tapared</h3>
+                <p>R$ 1.799,10</p>
+                <a href="https://www.lojagtsm1.com.br/componentes/garfos/garfo-suspensao-aro-29-x-fusion-rc32-eixo-boost-100mm-tapared"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente7.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Canote de selim Gtsm1 27.2 400mm com carrinho integrado </h3>
+                <p>R$ 26,91
+                </p>
+                <a href="https://www.lojagtsm1.com.br/componentes/canote-de-selim-gtsm1-400mm-27-2-com-carrinho"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente8.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Kit 21 marchas LTwoo A2 Cassete, Câmbio dianteiro, câmbio traseiro e trocadores</h3>
+                <p>R$ 224,10</p>
+                <a href="https://www.lojagtsm1.com.br/componentes/sistema-de-marchas/kit-21-marchas-l-twoo-a2-cassete-cambio-dianteiro-cambio-traseiro-cassete-e-trocador"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente9.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3> Aro 29 Gtsm1 Venus Disc Double Wall 36 Furos </h3>
+                <p>R$ 39,60</p>
+                <a href="ttps://www.lojagtsm1.com.br/componentes/aro-29-gtsm1-venus-disc-double-wall-36-furos?variant_id=12133"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente10.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Cubo Cassete 32 Furos Tsw Com Eixo Traseiro 12mm Dianteiro 9mm</h3>
+                <p>R$ 494,10</p>
+                <a href="https://www.lojagtsm1.com.br/componentes/cubos/par-de-cubos-cassete-32-furos-tsw-com-eixo-traseiro-12mm-dianteiro-9mm"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente11.jpg" alt="Bike Speed"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Manopla para bicicleta mtb</h3>
+                <p>R$ 10,80</p>
+                <a href="https://www.lojagtsm1.com.br/manopla-para-bicicleta-byorn-mtb?variant_id=17177"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente12.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Kit Câmbio e Trocador Gtsm1 XRX12
+                </h3>
+                <p>R$ 557,91
+                </p>
+                <a href="https://www.lojagtsm1.com.br/kit-cambio-e-trocador-gtsm1-xrx12" style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente13.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Câmara de ar 29 Gtsm1 válvula Presta bico fino</h3>
+                <p>R$ 12,51</p>
+                <a href="https://www.lojagtsm1.com.br/componentes/pneu/camara-de-ar-gts-m1-29-presta"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente14.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Gancheira alumínio para quadro 2.0 GTSM1 </h3>
+                <p>R$ 35,91</p>
+                <a href="https://www.lojagtsm1.com.br/componentes/gancheiras/gancheira-gtsm1-para-quadro-2-0"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="componente15.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Display LCD E-bike V8 48V</h3>
+                <p>R$ 454,50</p>
+                <a href="https://www.lojagtsm1.com.br/componentes/display-lcd-m5-48v-para-bicicleta-eletrica-v8"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+        </div>
+
+
+    </section>
+
+</body>
+
+</html>

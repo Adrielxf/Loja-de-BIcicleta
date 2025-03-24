@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CicloRibeira - Sua loja de bicicletas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .search-container {
+            flex: 1;
+            margin: 0 10px;
+            display: flex;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .search-container button {
+            background-color: orange;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .user-options {
+            font-size: 14px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+            line-height: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .search-container {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .user-options {
+                text-align: center;
+                gap: 0px;
+                line-height: 1;
+            }
+
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+        .anuncios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas */
+    gap: 10px;
+    padding: 10px;
+}
+
+.anuncios {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Sempre 2 colunas */
+    gap: 10px;
+    padding: 10px;
+}
+
+.anuncio {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%; /* Garante que ocupe a coluna corretamente */
+}
+
+/* Garante 2 colunas em telas menores */
+@media (max-width: 768px) {
+    .anuncios {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"> CicloRibeira📍</div> 
+        
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar CicloRibeira">
+            <button>🔍</button>
+        </div>
+        
+        <div class="user-options">
+            <p>Olá, faça seu login</p>
+            <p>Devoluções e Pedidos</p>
+            <p>🛒 Carrinho</p>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+    
+    <nav style="background-color: #2d2d2d; padding: 10px;justify-content: center">
+        <ul>
+            
+            <li><a href="index.html">Mais Vendidos</a></li>
+            <li><a href="bicicletas.html">Bicicletas</a></li>
+            <li><a href="acessorios.html">Acessórios</a></li>
+            <li><a href="componentes.html">Componentes</a></li>
+            <li><a href="shimano.html">Shimano</a></li>
+            <li><a href="novidades.html">Novidades na Loja</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('active');
+        }
+    </script>
+
+
+    <section style="text-align: center; padding: 20px;">
+
+        <h2
+            style="font-size: 36px; color: #333; font-weight: bold; border-bottom: 2px solid #0000; padding-bottom: 10px;">
+            Shimano
+        </h2>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px;">
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade1.jpg1.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Bicicleta 29 GTS M1 Freio a Disco 21 Marchas L-Twoo I-Vtec Lite</h3>
+                <p>R$ 1.079,10</p>
+                <a href="https://www.lojagtsm1.com.br/bicicletas/bicicleta-i-vtec-aro-29-l-twoo-a2-lite-21-velocidades-cassete?variant_id=17189"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade2.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3Bicicleta Elétrica 700 Codifice Freio a Disco 7v Suspensão E-Bike Zelena 350w 10.4AHe</h3>
+                <p>R$ 5.346,00 </p>
+                <a href="https://www.lojagtsm1.com.br/bicicletas/e-bike-zelena-700x50c-7v-motor-350w-bateria-10-4ah-36v?variant_id=16969"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade3.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Bicicleta Freeride GTS Aro 26 Freio Hidráulico 7 Marchas | Gtsm1 Freeride</h3>
+                <p>R$ 1.527,30</p>
+                <a href="https://www.lojagtsm1.com.br/bicicletas/kit-montagem-26-freeride-new-lite-2024-7v-shimano-freio-hidraulico?variant_id=16867"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="shimano4.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Transbike Gts m1 Slim para 2 Bicicletas Aço</h3>
+                <p>R$ 141,30</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/suporte-transbike-para-2-bikes-slim-apoio-fixo-sedan-hatch-aco"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade5.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Freio a disco Hidráulico GTS dianteiro e traseiro PX-036</h3>
+                <p>R$ 129,60</p>
+                <a href="https://www.lojagtsm1.com.br/componentes/freio-a-disco-hidraulico-gts-dianteiro-e-traseiro-sem-pastilha-px-036"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade6.jpg" alt="Bike Speed"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Patinete Elétrico NineBot Segway 300w 5.2mAh ES2 GTSM1</h3>
+                <p>R$ 2.418,30</p>
+                <a href="https://www.lojagtsm1.com.br/bicicletas/eletrica/patine-eletrico-ninebot-segway-es2-gtsm1"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade7.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3> Kit Acessórios GTSM1 - Squeeze 590ml, Suporte, Descanso e Cadeado</h3>
+                <p>R$ 98,91 </p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/kit-acessorios-bicicletas-gtsm1-squeeze-710ml-suporte-squeeze-descanso-cadeado"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade8.jpg8.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Selim GTS Vazado Preto Neopreme </h3>
+                <p>R$ 26,10 </p>
+                <a href="https://www.lojagtsm1.com.br/componentes/selim-211-l-capa-neo-gts-preto-com-costura-branca-hy-226"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade9.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3> Camelbak Mochila de hidratação Térmica 2 Litros Nanfeng </h3>
+                <p>R$ 59,40</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/bolsas/camelbak-mochila-de-hidratacao-termica-2-litros-nanfeng?variant_id=14091"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade10.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Transbike Suporte de Teto para Rack</h3>
+                <p>R$ 204,30</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/transbikes/transbike-suporte-de-teto-para-rack"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade11.jpg" alt="Bike Speed"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Rolo de Treino Equilíbrio triplo Esteira GTSM1</h3>
+                <p>R$ 204,30</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/rolo-de-treino/rolo-de-treino-equilibrio-triplo-esteira-gtsm1"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade12.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Rolo de Treino Equilíbrio triplo Esteira GTSM1 com Bolsa
+                </h3>
+                <p>R$ 269,10
+                </p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/rolo-de-treino/rolo-de-treino-equilibrio-triplo-esteira-gtsm1-com-bolsa"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade13.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Bomba de Ar Elétrica Smart Plus GTA 150 psi Recarregável</h3>
+                <p>R$ 287,01 </p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/bombas/de-ar-eletrica-smart-120-psi-recarregavel-gta-plus"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade14.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3> Capacete ciclismo GTSM1 MTB Vision </h3>
+                <p>R$ 35,10</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/capacete/capacete-mtb-gtsm1-vision?variant_id=11333"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="novidade15.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Pedal Alumínio Plataforma Relevo rosca grossa Preto</h3>
+                <p>R$ 33,30 </p>
+                <a href="https://www.lojagtsm1.com.br/componentes/pedais/pedal-steez-plataforma-relevo-aluminio-rosca-grossa-preto " style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+        </div>
+
+
+    </section>
+
+</body>
+
+</html>

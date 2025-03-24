@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CicloRibeira - Sua loja de bicicletas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .search-container {
+            flex: 1;
+            margin: 0 10px;
+            display: flex;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .search-container button {
+            background-color: orange;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .user-options {
+            font-size: 14px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+            line-height: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .search-container {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .user-options {
+                text-align: center;
+                gap: 0px;
+                line-height: 1;
+            }
+
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+        .anuncios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas */
+    gap: 10px;
+    padding: 10px;
+}
+
+.anuncios {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Sempre 2 colunas */
+    gap: 10px;
+    padding: 10px;
+}
+
+.anuncio {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%; /* Garante que ocupe a coluna corretamente */
+}
+
+/* Garante 2 colunas em telas menores */
+@media (max-width: 768px) {
+    .anuncios {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"> CicloRibeira📍</div> 
+        
+        <div class="search-container">
+            <input type="text" placeholder="Pesquisar CicloRibeira">
+            <button>🔍</button>
+        </div>
+        
+        <div class="user-options">
+            <p>Olá, faça seu login</p>
+            <p>Devoluções e Pedidos</p>
+            <p>🛒 Carrinho</p>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+    
+    <nav style="background-color: #2d2d2d; padding: 10px;justify-content: center">
+        <ul>
+            
+            <li><a href="index.html">Mais Vendidos</a></li>
+            <li><a href="bicicletas.html">Bicicletas</a></li>
+            <li><a href="acessorios.html">Acessórios</a></li>
+            <li><a href="componentes.html">Componentes</a></li>
+            <li><a href="shimano.html">Shimano</a></li>
+            <li><a href="novidades.html">Novidades na Loja</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('active');
+        }
+    </script>
+
+
+    <section style="text-align: center; padding: 20px;">
+
+        <h2
+            style="font-size: 36px; color: #333; font-weight: bold; border-bottom: 2px solid #0000; padding-bottom: 10px;">
+            Acessorios
+        </h2>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px;">
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio1.jpg " alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Refletor olho de gato para roda de Magnésio</h3>
+                <p>R$ 17,10</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/sinalizacao/refletor-olho-de-gato-para-roda-de-magnesio"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio2.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Transbike Suporte de Teto para Rack Bike Up</h3>
+                <p>R$ 215,10</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/transbikes/transbike-suporte-de-teto-para-rack-bike-up"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio3.jpg " alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Cadeirinha INFANTIL Dianteira para Bicicleta Stilo</h3>
+                <p>R$ 35,10</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/cadeirinha-infantil-frontal-para-bicicleta-stilo?variant_id=13818"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio4.jpg  " alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Lanterna Led Traseira recarregável Com seta e Controle wifi CL-8038</h3>
+                <p>R$ 133,20</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/sinalizacao/lanterna-traseira-recarregavel-com-seta-e-controle-wifi-cl-8038"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio5.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Transbike Gts m1 Force para 2 Bicicletas Aço</h3>
+                <p>R$ 152,10</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/transbikes/transbike-gtsm1-force-para-2-bicicletas-aco"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+       
+
+        
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio6.jpg" alt="Bike Speed"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Camiseta Ciclista Gtsm1 Manga Curta com Proteção UVA e UVB Rider Premium</h3>
+                <p>R$ 89,10</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/roupas/camiseta-ciclista-gts-m1-manga-curta-com-protecao-uva-e-uvb-rider-premium"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio7.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Macacão Feminino Ciclista Gtsm1 Manga Curta com Proteção - UVA / UVB 50 FPS</h3>
+                <p>R$ 125,10</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/roupas/macacao-feminina-ciclista-gtsm1-manga-curta-com-protecao-uva-uvb-50-fps?variant_id=15883"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio8.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Para-Lamas Traseiro e Dianteiro para Bicicleta Elétrica V8 - Q8</h3>
+                <p>R$ 234,00</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/para-lamas-traseiro-e-dianteiro-para-bicicleta-eletrica-v8"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio9.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3> Lanterna Vista Light BS-216 Vermelho </h3>
+                <p>R$ 13,34</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/sinalizacao/lanterna-vista-light-bs-216-vermelho"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio10.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Capacete ciclismo GTS MTB FJI-44 com Led Traseiro</h3>
+                <p>R$ 143,91</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/capacete-mtb-fji-44-com-led?variant_id=17179"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+        
+
+        
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio11.jpg" alt="Bike Speed"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Cobre Corrente Aro 16 Nylon preto </h3>
+                <p>R$ 12,60</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/cobre-corrente-aro-16-nylon"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio12.jpg" alt="MTB Pro"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>Cesta para Bicicleta Aço Preta
+                </h3>
+                <p>RR$ 39,51
+                </p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/cesta-imp-grande-aco-preta"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio13.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Adaptador de Espiga Over 25.4</h3>
+                <p>RR$ 4,41 </p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/adapt-espiga-25-4"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio14.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3> SQUEEZE PRO GTS M1 600ML </h3>
+                <p>R$ 9,81</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/squeeze-600ml-pro-gtsm1"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+            <div
+                style="width: 300px; border: 1px solid #ccc; padding: 20px; text-align: center; background-color: white;">
+                <img src="acessorio15.jpg" alt="BMX Radical"
+                    style="width: 100%; height: 500px; object-fit: contain; border-radius: 5px;">
+                <h3>
+                    Camiseta Ciclismo GTSM1 G Team Manga Longa</h3>
+                <p>R$ 89,01</p>
+                <a href="https://www.lojagtsm1.com.br/acessorios/camiseta-ciclista-manga-longa-confort-classic?variant_id=16453"
+                    style="text-decoration: none;">
+                    <button style="background-color: orange; color: white; padding: 12px 20px;">Comprar</button>
+                </a>
+            </div>
+
+        </div>
+
+
+    </section>
+
+</body>
+
+</html>
